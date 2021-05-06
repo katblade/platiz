@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <title>Header</title>
+</head>
+<style>
+
+    body{
+        margin: 0px;
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(48,59,102,1) 46%, rgba(208,196,180,1) 100%);
+        font-family: 'Mulish', sans-serif;
+
+    }
+
+    .header {
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(48,59,102,1) 46%, rgba(208,196,180,1) 100%);
+        width: 100%;
+        height: 80px;   
+        display: flex;  
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__img {
+
+        width: 200px;
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+
+    .header__menu{
+        margin-right: 30px;
+    }
+
+    .header__menu ul {
+
+        display: none;
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        width: 100px;
+        text-align: right;
+        margin: 0px 0px 0px -14px;
+    }
+
+    .header__menu:hover ul, ul:hover{
+        display: block;
+    }
+
+    .header__menu li {
+        margin: 10px 0px;
+    }
+
+    .header__menu li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .header__menu li a:hover {
+        text-decoration: underline;
+    }
+
+    .header__menu--profile{
+        margin-right: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .header__menu--profile img{
+        margin-right: 8px;
+        width: 40px;
+        display: flex;
+    }
+
+    
+    .header__menu--profile p{
+        margin: 0px;
+        color: white;
+    }
+
+    .main{
+        height: 300px;
+    }
+
+    .main__title{
+        font-size: 25px;
+        color: white;
+    }
+
+    .input{
+        outline: none;
+        background-color: rgba(255,255,255, 0.1);
+        border: 2px solid white;
+        border-radius: 30px;
+        color: white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        padding: 0px 20px;
+        width: 70%;
+
+    }
+
+    ::placeholder{
+        color: white;
+    }
+
+    .carrousel{
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+
+    .carrousel__container{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+
+    .carrousel-item {
+        width: 200px;
+        height: 250px;
+        background-color: palevioletred;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+    }
+
+    .carrousel-item:hover ~ .carrousel-item {
+        transform: translate3d(100px, 0, 0);
+    }
+
+    .carrousel__container:hover .carrousel-item{
+        opacity: 0.3;
+    }
+
+    .carrousel__container:hover .carrousel-item:hover{
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    .carrousel-item__img{
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .carrousel-item__details{
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,  rgba(0,0,0,0.9) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .carrousel-item__details:hover {
+        opacity: 1;
+    }
+
+</style>
+<body>
+    <header class="header">
+        <img class="header__img" src="imagenes/logo-platzi-video-BW2.png" alt="Logo">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="imagenes/user-icon.png" alt="user">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="/">Cuenta</a></li>
+                <li><a href="/">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="main">
+        <h2 class="main__title">¿Algun diseño te interesa?</h2>
+        <input type="text" placeholder="Buscar..." class="input">
+    </section>
+
+    <section class="carrousel">
+        <div class="carrousel__container">
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="https://images.pexels.com/photos/3214683/pexels-photo-3214683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="people">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="imagenes/play-icon.png" alt="play-icon">
+                        <img src="imagenes/plus-icon.png" alt="plus-icon">
+                    </div>
+                    <p class="carrousel-item__details--title">Titulo Descriptivo</p>
+                    <p class="carrousel-item__details--subtitle">2019 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
